@@ -1,0 +1,15 @@
+Source: happy-zero-branding
+Section: misc
+Priority: optional
+Maintainer: Happy Zero Team <team@happyzero.org>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+Homepage: https://happyzero.org
+
+Package: happy-zero-branding
+Architecture: all
+Depends: ${misc:Depends}
+Description: Happy Zero branding and identity files
+ Happy Zero system branding including os-release, logos, wallpapers,
+ and identity files. Replaces Ubuntu branding for a clean, distinct
+ Happy Zero identity while maintaining compatibility.

@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_install:
+	mkdir -p debian/happy-zero-settings/etc/dconf/profile
+	install -m 644 settings/dconf/profile/user debian/happy-zero-settings/etc/dconf/profile/user 2>/dev/null || true
+	mkdir -p debian/happy-zero-settings/etc/dconf/db/local.d
+	install -m 644 settings/dconf/db/local.d/00-happyzero debian/happy-zero-settings/etc/dconf/db/local.d/00-happyzero 2>/dev/null || true
+	mkdir -p debian/happy-zero-settings/usr/share/glib-2.0/schemas
+	install -m 644 settings/gsettings/99_happyzero.gschema.override debian/happy-zero-settings/usr/share/glib-2.0/schemas/ 2>/dev/null || true
+
+override_dh_auto_clean:
+	rm -rf debian/.debhelper/ debian/happy-zero-settings/ debian/debhelper-build-stamp debian/files

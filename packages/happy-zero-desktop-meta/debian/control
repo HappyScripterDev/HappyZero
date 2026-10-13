@@ -1,0 +1,38 @@
+Source: happy-zero-desktop-meta
+Section: metapackages
+Priority: optional
+Maintainer: Happy Zero Team <team@happyzero.org>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+Homepage: https://happyzero.org
+
+Package: happy-zero-desktop-meta
+Architecture: all
+Depends: ${misc:Depends},
+         ubuntu-desktop-minimal,
+         happy-zero-branding,
+         happy-zero-settings,
+         firefox,
+         gnome-shell,
+         gnome-session,
+         nautilus,
+         gnome-terminal,
+         network-manager,
+         network-manager-gnome,
+         ubuntu-restricted-extras,
+         vlc,
+         gnome-calculator,
+         gnome-calendar,
+         gnome-text-editor,
+         file-roller,
+         gnome-system-monitor,
+         gnome-disk-utility,
+         gnome-screenshot,
+         cups,
+         system-config-printer,
+         ufw,
+         unattended-upgrades,
+         flatpak
+Description: Happy Zero desktop metapackage (standard)
+ Standard desktop environment metapackage for Happy Zero.
+ Includes core GNOME apps, codecs, utilities, and security tools.

@@ -1,0 +1,16 @@
+<svg width="640" height="160" viewBox="0 0 640 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title>Happy Zero Logo and Wordmark</title>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22D3EE;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1A9C89;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#147A6B;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <g transform="translate(20,20)">
+    <rect x="0" y="0" width="120" height="120" rx="26" fill="url(#grad)" />
+    <circle cx="60" cy="60" r="28" fill="none" stroke="#FFFFFF" stroke-width="9" opacity="0.95" />
+    <path d="M 42 60 L 56 74 L 78 52" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+  <text x="180" y="90" font-family="Ubuntu, Cantarell, sans-serif" font-size="48" font-weight="600" fill="#1F1F1F">Happy Zero</text>
+</svg>

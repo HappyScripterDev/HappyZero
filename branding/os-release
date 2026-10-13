@@ -1,0 +1,15 @@
+NAME="Happy Zero"
+PRETTY_NAME="Happy Zero 1.0 (Noble Zero)"
+ID=happyzero
+ID_LIKE=ubuntu
+VERSION="1.0 (Noble Zero)"
+VERSION_ID=1.0
+VERSION_CODENAME=noble-zero
+UBUNTU_CODENAME=noble
+HOME_URL="https://happyzero.org"
+SUPPORT_URL="https://happyzero.org/support"
+BUG_REPORT_URL="https://github.com/happyzero/happy-zero/issues"
+PRIVACY_POLICY_URL="https://happyzero.org/privacy"
+ANSI_COLOR="1;34"
+UBUNTU_VERSION=24.04
+BUILD_ID=20261012

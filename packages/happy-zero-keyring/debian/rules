@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_install:
+	mkdir -p debian/happy-zero-keyring/usr/share/keyrings
+	# Placeholder - actual key will be generated during build/release
+	touch debian/happy-zero-keyring/usr/share/keyrings/happy-zero-archive-keyring.gpg
+	touch debian/happy-zero-keyring/usr/share/keyrings/happy-zero-archive-keyring.gpg.asc

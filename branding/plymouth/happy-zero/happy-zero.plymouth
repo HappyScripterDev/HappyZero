@@ -1,0 +1,23 @@
+[Plymouth Theme]
+Name=Happy Zero
+Description=Happy Zero Plymouth Splash
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/happy-zero
+ScriptFile=/usr/share/plymouth/themes/happy-zero/happy-zero.script
+LogoImage=/usr/share/plymouth/themes/happy-zero/logo.png
+HorizontalAlignment=0.5
+VerticalAlignment=0.5
+WatermarkHorizAlignment=0.5
+WatermarkVertAlignment=0.9
+ProgressBarHorizontalAlignment=0.5
+ProgressBarVerticalAlignment=0.75
+ProgressBarHeight=8
+ProgressBarWidth=200
+LoadingFont=PlymouthFont
+MessageFont=PlymouthFont
+TitleFont=PlymouthFont
+SubTitleFont=PlymouthFont
+ChargeUpRate=50
+ChargeDownRate=50

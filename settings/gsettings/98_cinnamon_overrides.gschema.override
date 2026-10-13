@@ -1,0 +1,12 @@
+[org.cinnamon.desktop.interface]
+gtk-theme='Yaru'
+icon-theme='Yaru'
+cursor-theme='Yaru'
+font-name='Ubuntu 11'
+
+[org.cinnamon.theme]
+name='Yaru'
+
+[org.cinnamon.desktop.wm.preferences]
+button-layout='close,minimize,maximize:menu'
+num-workspaces=4

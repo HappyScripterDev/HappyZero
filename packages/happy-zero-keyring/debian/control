@@ -1,0 +1,13 @@
+Source: happy-zero-keyring
+Section: misc
+Priority: optional
+Maintainer: Happy Zero Team <team@happyzero.org>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+Homepage: https://happyzero.org
+
+Package: happy-zero-keyring
+Architecture: all
+Depends: ${misc:Depends}
+Description: Happy Zero archive keyring
+ GnuPG keyring for Happy Zero repository packages.

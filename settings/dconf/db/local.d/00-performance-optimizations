@@ -1,0 +1,60 @@
+# Happy Zero Performance Optimizations
+# Balanced for weak and strong PCs with tunable defaults
+
+[org/gnome/mutter]
+# Reduce animations for smoother experience on weak hardware
+experimental-features=['x11-randr-fractional-scaling']
+dynamic-workspaces=true
+workspaces-only-on-primary=false
+
+[org/gnome/shell]
+# Favor performance over effects
+favorite-apps=['org.gnome.Nautilus.desktop', 'firefox.desktop', 'org.gnome.Terminal.desktop', 'gnome-system-monitor.desktop']
+
+[org/gnome/desktop/interface]
+enable-animations=false
+gtk-enable-animations=false
+clock-show-seconds=false
+show-battery-percentage=true
+
+[org/gnome/desktop/peripherals/mouse]
+natural-scroll=true
+accel-profile='adaptive'
+
+[org/gnome/desktop/peripherals/touchpad]
+natural-scroll=true
+tap-to-click=true
+disable-while-typing=true
+two-finger-scrolling-enabled=true
+speed=0.6
+
+[org/gnome/desktop/session]
+idle-delay=300
+
+[org/gnome/settings-daemon/plugins/power]
+sleep-inactive-ac-type='nothing'
+sleep-inactive-battery-type='suspend'
+power-button-action='suspend'
+critical-battery-action='hibernate'
+
+[org/gnome/desktop/search-providers]
+disabled=['org.gnome.Calculator.desktop', 'org.gnome.Characters.desktop']
+
+[org/cinnamon]
+enable-indicators=true
+desklet-decorations=0
+panel-launcher-animation=false
+
+[org/cinnamon/desktop/interface]
+enable-animations=false
+gtk-enable-animations=false
+
+[org/cinnamon/muffin]
+tile-hud-threshold=20
+reduced-resources=false
+
+[org/cinnamon/settings-daemon/peripherals/touchpad]
+natural-scroll=true
+tap-to-click=true
+disable-while-typing=true
+scroll-method='two-finger-scrolling'

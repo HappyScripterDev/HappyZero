@@ -1,0 +1,26 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_install:
+	# Install os-release and related files
+	mkdir -p debian/happy-zero-branding/etc
+	install -m 644 branding/os-release debian/happy-zero-branding/etc/os-release
+	install -m 644 branding/lsb-release debian/happy-zero-branding/etc/lsb-release
+	install -m 644 branding/issue debian/happy-zero-branding/etc/issue
+	install -m 644 branding/issue.net debian/happy-zero-branding/etc/issue.net
+	install -m 644 branding/motd debian/happy-zero-branding/etc/motd
+
+	# Install logos
+	mkdir -p debian/happy-zero-branding/usr/share/happy-zero/logos
+	install -m 644 branding/logos/hz-logo-mark.svg debian/happy-zero-branding/usr/share/happy-zero/logos/
+	install -m 644 branding/logos/hz-wordmark.svg debian/happy-zero-branding/usr/share/happy-zero/logos/
+	install -m 644 branding/logos/hz-logo-combined.svg debian/happy-zero-branding/usr/share/happy-zero/logos/
+
+	# Install wallpapers
+	mkdir -p debian/happy-zero-branding/usr/share/backgrounds/happy-zero
+	# Create placeholder if no wallpapers yet
+	touch debian/happy-zero-branding/usr/share/backgrounds/happy-zero/.placeholder
+
+override_dh_auto_clean:
+	rm -rf debian/.debhelper/ debian/happy-zero-branding/ debian/debhelper-build-stamp debian/files

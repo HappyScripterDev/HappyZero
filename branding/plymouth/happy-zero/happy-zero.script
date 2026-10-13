@@ -1,0 +1,30 @@
+# Happy Zero Plymouth Script
+# Clean minimal boot splash
+
+Window.SetBackgroundTopColor(0.117, 0.117, 0.117, 1.0);
+Window.SetBackgroundBottomColor(0.117, 0.117, 0.117, 1.0);
+
+logo.image = Image("logo.png");
+logo.sprite = Sprite(logo.image);
+logo.x = Window.GetWidth() / 2 - logo.image.GetWidth() / 2;
+logo.y = Window.GetHeight() / 2 - logo.image.GetHeight() / 2;
+logo.sprite.SetPosition(logo.x, logo.y, 10000);
+
+# Progress bar
+progress_bar.box.image = Image("progress_box.png");
+progress_bar.bar.image = Image("progress_bar.png");
+progress_bar.sprite = Sprite(progress_bar.box.image);
+progress_bar.bar_sprite = Sprite(progress_bar.bar.image);
+
+progress_bar.x = Window.GetWidth() / 2 - progress_bar.box.image.GetWidth() / 2;
+progress_bar.y = Window.GetHeight() * 0.75 - progress_bar.box.image.GetHeight() / 2;
+progress_bar.sprite.SetPosition(progress_bar.x, progress_bar.y, 10000);
+progress_bar.bar_sprite.SetPosition(progress_bar.x, progress_bar.y, 10001);
+
+fun refresh_callback() {
+  progress_bar.bar_sprite.SetImage(progress_bar.bar.image.Scale(progress_bar.original_image_width * progress_bar.percentage, progress_bar.bar.image.GetHeight()));
+  progress_bar.percentage = progress_bar.percentage + 0.0005;
+  if (progress_bar.percentage > 1.0) progress_bar.percentage = 0.0;
+}
+
+Plymouth.SetRefreshFunction(refresh_callback);

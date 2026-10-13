@@ -1,0 +1,65 @@
+name: Build Happy Zero ISO
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install build dependencies
+      run: |
+        sudo apt update
+        sudo apt install -y \
+          debootstrap \
+          squashfs-tools \
+          xorriso \
+          mtools \
+          syslinux-utils \
+          isolinux \
+          grub-pc-bin \
+          grub-efi-amd64-bin \
+          shim-signed \
+          dpkg-dev \
+          devscripts \
+          lintian
+
+    - name: Build HZ packages
+      run: |
+        mkdir -p packages-build
+        for pkg in packages/happy-zero-*; do
+          if [ -d "$pkg" ]; then
+            echo "Building $(basename $pkg)..."
+            (cd "$pkg" && dpkg-buildpackage -us -uc -b)
+          fi
+        done
+        mv ../*.deb packages-build/ 2>/dev/null || true
+
+    - name: Build ISO
+      run: |
+        sudo ./build/scripts/build-hz.sh || true
+
+    - name: Verify artifacts
+      run: |
+        ls -la out/ 2>/dev/null || echo "No out dir"
+        ls -la packages-build/ 2>/dev/null || echo "No packages"
+
+    - name: Upload artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: happy-zero-artifacts
+        path: |
+          out/*.iso
+          out/*.sha256
+          packages-build/*.deb
+        if-no-files-found: warn

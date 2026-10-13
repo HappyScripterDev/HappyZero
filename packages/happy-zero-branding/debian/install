@@ -1,0 +1,7 @@
+# Files to install (if not handled in rules)
+branding/os-release usr/share/happy-zero/
+branding/lsb-release usr/share/happy-zero/
+branding/issue usr/share/happy-zero/
+branding/issue.net usr/share/happy-zero/
+branding/motd usr/share/happy-zero/
+branding/logos/* usr/share/happy-zero/logos/

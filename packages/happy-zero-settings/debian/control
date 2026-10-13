@@ -1,0 +1,14 @@
+Source: happy-zero-settings
+Section: misc
+Priority: optional
+Maintainer: Happy Zero Team <team@happyzero.org>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+Homepage: https://happyzero.org
+
+Package: happy-zero-settings
+Architecture: all
+Depends: ${misc:Depends}, dconf-cli, gsettings-desktop-schemas
+Description: Happy Zero default settings
+ Default dconf/gsettings overrides for Happy Zero to provide
+ consistent stock Ubuntu-like look and feel with HZ branding.
